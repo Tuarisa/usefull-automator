@@ -62,7 +62,7 @@
 			else
 				tell application "Terminal"
 					do script "cd " &amp; quoted form of POSIX path of f
-					do script ("python -m SimpleHTTPServer " &amp; p) in front window
+					do script ("python3 -m http.server " &amp; p) in front window
 				end tell
 				tell application "Google Chrome" to open location "http://localhost:" &amp; p
 				set didThese to (didThese &amp; f) --load into memory for subsequent iterations of loop
